@@ -1,30 +1,29 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <main-page></main-page>
+  <div class="mainContainer">
+    <router-view />
+  </div>
 </template>
+<script setup lang="ts">
+  import MainPage from "./components/MainPage.vue";
+</script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  #app {
+    width: 100%;
+    height: 100vh;
   }
-}
+
+  .mainContainer {
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: absolute;
+    top: 52px;
+    left: 70px;
+    background-color: #fff;
+    width: calc(100% - 70px);
+    height: calc(100% - 122px);
+    // box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: -5px 3px 13px rgba(0, 0, 0, 0.2);
+  }
 </style>
